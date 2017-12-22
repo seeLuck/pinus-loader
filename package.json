@@ -1,10 +1,11 @@
 {
-	"name": "pomelo-loader", 
-	"version": "0.0.7", 
+	"name": "pomelo-loader",
+	"version": "0.0.7",
 	"dependencies": {
-	}, 
+		"@types/node": "^8.5.2"
+	},
 	"devDependencies": {
-		"mocha": ">=0.0.1", 
+		"mocha": ">=0.0.1",
 		"should": ">=0.0.1"
 	}
 }
