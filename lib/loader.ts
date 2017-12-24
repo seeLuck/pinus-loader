@@ -53,11 +53,15 @@ var loadFile = function (fp, context)
 		return;
 	}
 
-	if (typeof m === 'function')
+	if (typeof m.default === 'function')
 	{
 		// if the module provides a factory function 
 		// then invoke it to get a instance
-		m = m(context);
+		m = m.default(context);
+	}
+	else
+	{
+		throw new Error(`${fp} must define export default function(context){}`);
 	}
 
 	return m;
