@@ -1,13 +1,17 @@
 {
-	"name": "pomelo-loader",
-	"version": "1.0.2",
+	"name": "pinus-loader",
+	"version": "1.0.0",
 	"main": "./dist/index",
 	"types": "./dist/index.d.ts",
+	"scripts": {
+		"build": "node_modules/.bin/tsc"
+	},
 	"dependencies": {
 		"@types/node": "^8.5.2"
 	},
 	"devDependencies": {
 		"mocha": ">=0.0.1",
-		"should": ">=0.0.1"
+		"should": ">=0.0.1",
+		"typescript": "^2.6.2"
 	}
 }
