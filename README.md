@@ -1,8 +1,8 @@
-#pomelo-loader - loader module for pomelo
+#pinus-loader - loader module for pinus
 
-Load codes for pomelo based on the convention over configuration rules.
+Load codes for pinus based on the convention over configuration rules.
 
-pomelo-rpc could load modules in batch but not load the sub-directory recursively.
+pinus-rpc could load modules in batch but not load the sub-directory recursively.
 
 + Tags: node.js
 
@@ -21,7 +21,7 @@ the return result would be: ```{test: require('./lib/a')}```
 
 Module definiation
 
-If the module exported as a function, pomelo-loader would take it as a factory method and generate a new instance of module by calling the function. And it would return the module directly for other situation.
+If the module exported as a function, pinus-loader would take it as a factory method and generate a new instance of module by calling the function. And it would return the module directly for other situation.
 
 ```javascript
 module.exports = function(context) {
@@ -31,12 +31,12 @@ module.exports = function(context) {
 
 ##Installation
 ```
-npm install pomelo-loader
+npm install pinus-loader
 ```
 
 ##Usage
 ``` javascript
-var Loader = require('pomelo-loader');
+var Loader = require('pinus-loader');
 
 var res = Loader.load('.');
 console.log('res: %j', res);

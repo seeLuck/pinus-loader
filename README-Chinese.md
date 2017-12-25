@@ -1,7 +1,7 @@
-#pomelo-loader - loader module for pomelo
+#pinus-loader - loader module for pinus
 pomelo中使用Convention over Configuration的形式管理工程目录，不同的功能按约定放在不同的目录下。pomelo-loader为pomelo提供了按目录加载模块的功能。
 
-pomelo-rpc可以批量加载指定目录下的模块，挂到一个空对象下返回（但不会递归加载子目录），同时提供模块命名机制。
+pinus-rpc可以批量加载指定目录下的模块，挂到一个空对象下返回（但不会递归加载子目录），同时提供模块命名机制。
 
 + Tags: node.js
 
@@ -28,12 +28,12 @@ module.exports = function(context) {
 
 ##安装
 ```
-npm install pomelo-loader
+npm install pinus-loader
 ```
 
 ##用法
 ``` javascript
-var Loader = require('pomelo-loader');
+var Loader = require('pinus-loader');
 
 var res = Loader.load('.');
 console.log('res: %j', res);
