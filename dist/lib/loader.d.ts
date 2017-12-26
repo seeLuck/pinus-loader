@@ -14,4 +14,6 @@
  *                           module factory function.
  * @return {Object}          module that has loaded.
  */
-export declare function load(mpath: any, context: any): {};
+export declare function load(mpath: string, context: any): {
+    [key: string]: any;
+};

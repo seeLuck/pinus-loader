@@ -21,7 +21,7 @@ import * as path from 'path';
  *                           module factory function.
  * @return {Object}          module that has loaded.
  */
-export function load(mpath, context)
+export function load(mpath: string, context : any)
 {
 	if (!mpath)
 	{
@@ -44,7 +44,7 @@ export function load(mpath, context)
 	return loadPath(mpath, context);
 };
 
-var loadFile = function (fp, context)
+var loadFile = function (fp: string, context : any)
 {
 	var m = requireUncached(fp);
 
@@ -67,7 +67,7 @@ var loadFile = function (fp, context)
 	return m;
 };
 
-var loadPath = function (path, context)
+var loadPath = function (path : string, context : any)
 {
 	var files = fs.readdirSync(path);
 	if (files.length === 0)
@@ -81,7 +81,7 @@ var loadPath = function (path, context)
 		path += '/';
 	}
 
-	var fp, fn, m, res = {};
+	var fp, fn, m, res: {[key:string]:any} = {};
 	for (var i = 0, l = files.length; i < l; i++)
 	{
 		fn = files[i];
@@ -113,7 +113,7 @@ var loadPath = function (path, context)
  * @param fn {String} file name
  * @param suffix {String} suffix string, such as .js, etc.
  */
-var checkFileType = function (fn, suffix)
+var checkFileType = function (fn : string, suffix : string)
 {
 	if (suffix.charAt(0) !== '.')
 	{
@@ -130,17 +130,17 @@ var checkFileType = function (fn, suffix)
 	return str === suffix;
 };
 
-var isFile = function (path)
+var isFile = function (path : string)
 {
 	return fs.statSync(path).isFile();
 };
 
-var isDir = function (path)
+var isDir = function (path : string)
 {
 	return fs.statSync(path).isDirectory();
 };
 
-var getFileName = function (fp, suffixLength)
+var getFileName = function (fp : string, suffixLength : number)
 {
 	var fn = path.basename(fp);
 	if (fn.length > suffixLength)
@@ -151,7 +151,7 @@ var getFileName = function (fp, suffixLength)
 	return fn;
 };
 
-var requireUncached = function (module)
+var requireUncached = function (module : string)
 {
 	delete require.cache[require.resolve(module)]
 	return require(module)
